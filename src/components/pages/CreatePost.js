@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
+import {createPost} from "../../store/actions/postActions";
+import { connect } from "react-redux"
 
-const CreatePost = () => {
+const CreatePost = ({createPost}) => {
     const [state, setState] = useState({
         title: '',
         content: ''
@@ -9,6 +11,7 @@ const CreatePost = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(state);
+        createPost(state)
     }
 
     const handleChange = (e) => {
@@ -40,4 +43,18 @@ const CreatePost = () => {
     );
 };
 
-export default CreatePost;
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         // createPost : dispatch({type: 'ADD_POST', })
+//     }
+// }
+
+const mapDispatchToProps = dispatch => {
+    return{
+        createPost: post => {
+            dispatch(createPost(post));
+        }
+    }
+}
+
+export default connect(null,mapDispatchToProps)(CreatePost);
