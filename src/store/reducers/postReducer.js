@@ -7,6 +7,15 @@ const initState = {
 }
 
 const postReducer = (state = initState, action) => {
+    switch(action.type){
+        case 'ADD_POST':
+            console.log('action: ', action.post);
+            // return{
+
+            // }
+        default:
+            break;
+    }
     return state;
 }
 
