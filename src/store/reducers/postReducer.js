@@ -13,6 +13,7 @@ const postReducer = (state = initState, action) => {
             // return{
 
             // }
+            break;
         default:
             break;
     }
