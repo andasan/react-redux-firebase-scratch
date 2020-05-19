@@ -4,7 +4,7 @@ import PostSummary from './PostSummary';
 const PostList = ({postList}) => {
     return (
         <div className="post-list section">
-            {postList.map((post, index) => (
+            {postList && postList.map((post, index) => (
                 <PostSummary key={index} {...post} />
             ))}
         </div>

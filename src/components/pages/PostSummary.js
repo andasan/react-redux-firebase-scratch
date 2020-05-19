@@ -9,8 +9,8 @@ const PostSummary = (props) => {
                     pathname: `blog/${props.id}`,
                     state: props
                 }}>{props.title}</Link>
-                <p>Posted by the NN</p>
-                <p className="grey-text">3/3/2020</p>
+                <p>{`${props.authorFirstName} ${props.authorLastName}`}</p>
+                <p className="grey-text"></p>
             </div>
         </div>
     );
